@@ -1,0 +1,26 @@
+import { mdx } from '@mdx-js/react';
+import { theme } from '~/theme';
+import { SystemUIShowcases } from '@divriots/dockit-react/systemui-showcases';
+import Layout from '~/doc-layout';
+export default Layout;
+
+# Theme
+
+The `theme` tokens components is responsible to merge and exposes all the Design Token in one consistent object.
+
+This _complete theme_ is then ready to be injected in the [`extendTheme`](https://chakra-ui.com/docs/theming/customize-theme#customizing-theme-tokens) theming function:
+
+```jsx
+import React from 'react';
+import { ThemeProvider, extendTheme, theme } from '@loblaw/ds-chakra/theme';
+
+// Extend default Chakra theme
+const fullTheme = extendTheme(theme);
+
+// Usage
+<ThemeProvider theme={fullTheme}>
+  {/***
+    Your components tree
+  */}
+</ThemeProvider>;
+```
